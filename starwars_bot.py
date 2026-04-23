@@ -11,7 +11,10 @@ import os
 # CONFIGURACIÓN
 # ============================================================
 TELEGRAM_TOKEN = "8386451412:AAEmY3mpZwFguFN_wqwiFKYL9_qWCW0U48s"
-CHAT_ID = "-1003953625410"
+CANALES = [
+    "-1003953625410",
+    "-1003595840163",
+]
 HORA_MANANA = "09:00"
 HORA_TARDE = "18:00"
 AVISO_MAUL_LUNES = True  # Cambia a False cuando acabe la serie el 4 de mayo
@@ -160,16 +163,17 @@ def mensaje_maul_lunes():
 # ENVÍO
 # ============================================================
 def enviar_telegram(mensaje):
-    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-    payload = {"chat_id": CHAT_ID, "text": mensaje, "parse_mode": "Markdown", "disable_web_page_preview": False}
-    try:
-        response = requests.post(url, json=payload)
-        if response.status_code == 200:
-            print(f"✅ Enviado a las {datetime.now().strftime('%H:%M:%S')}")
-        else:
-            print(f"❌ Error: {response.text}")
-    except Exception as e:
-        print(f"❌ Error conexión: {e}")
+    for canal in CANALES:
+        url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+        payload = {"chat_id": canal, "text": mensaje, "parse_mode": "Markdown", "disable_web_page_preview": False}
+        try:
+            response = requests.post(url, json=payload)
+            if response.status_code == 200:
+                print(f"✅ Enviado a {canal} a las {datetime.now().strftime('%H:%M:%S')}")
+            else:
+                print(f"❌ Error en {canal}: {response.text}")
+        except Exception as e:
+            print(f"❌ Error conexión {canal}: {e}")
 
 # ============================================================
 # TAREAS
@@ -236,4 +240,5 @@ if __name__ == "__main__":
     while True:
         schedule.run_pending()
         time.sleep(60)
+
 
