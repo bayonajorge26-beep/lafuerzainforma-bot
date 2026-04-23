@@ -127,7 +127,7 @@ def formatear_noticias(noticias):
         mensaje += f"🔗 [Leer más]({n['link']})\n"
         mensaje += f"📡 _Fuente: {n['fuente']}_\n\n"
     mensaje += "——————————————\n"
-    mensaje += "🤖 _La Fuerza Informa — Bot automático_"
+    mensaje += "🤖 _La Fuerza Informa — R3-PORT_"
     return mensaje
 
 def formatear_lore(noticias):
@@ -144,7 +144,7 @@ def formatear_lore(noticias):
         mensaje += f"🔗 [Leer más]({n['link']})\n"
         mensaje += f"📡 _Fuente: {n['fuente']}_\n\n"
     mensaje += "——————————————\n"
-    mensaje += "🤖 _La Fuerza Informa — Bot automático_"
+    mensaje += "🤖 _La Fuerza Informa — R3-PORT_"
     return mensaje
 
 def mensaje_maul_lunes():
@@ -153,7 +153,7 @@ def mensaje_maul_lunes():
         "Esta semana han salido dos capítulos nuevos en Disney+.\n"
         "¿Ya los has visto? Cuéntanos qué te han parecido 👇\n\n"
         "——————————————\n"
-        "🤖 _La Fuerza Informa — Bot automático_"
+        "🤖 _La Fuerza Informa — R3-PORT_"
     )
 
 # ============================================================
@@ -236,3 +236,4 @@ if __name__ == "__main__":
     while True:
         schedule.run_pending()
         time.sleep(60)
+
