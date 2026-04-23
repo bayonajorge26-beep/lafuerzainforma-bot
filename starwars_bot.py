@@ -228,7 +228,7 @@ def tarea_tarde():
 if __name__ == "__main__":
     print(f"🤖 Bot La Fuerza Informa v2 arrancado")
     print(f"📅 Mañana: {HORA_MANANA} | Tarde: {HORA_TARDE}")
-    print(f"💬 Canal ID: {CHAT_ID}")
+    print(f"💬 Canales: {CANALES}")
     print("—" * 40)
 
     print("🚀 Ejecutando prueba inicial...")
@@ -240,5 +240,6 @@ if __name__ == "__main__":
     while True:
         schedule.run_pending()
         time.sleep(60)
+
 
 
