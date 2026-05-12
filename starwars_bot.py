@@ -17,7 +17,7 @@ CANALES = [
 ]
 HORA_MANANA = "09:00"
 HORA_TARDE = "18:00"
-AVISO_MAUL_LUNES = True  # Cambia a False cuando acabe la serie el 4 de mayo
+AVISO_MAUL_LUNES = False  # Cambia a False cuando acabe la serie el 4 de mayo
 HISTORIAL_FILE = "noticias_enviadas.json"
 
 # ============================================================
